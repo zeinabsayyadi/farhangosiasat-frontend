@@ -1,0 +1,11 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.overlaybar {
+  z-index: 10;
+  position: absolute;
+  margin-top: 0px !important;
+  width: 100vw;
+}
