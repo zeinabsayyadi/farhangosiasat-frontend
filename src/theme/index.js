@@ -44,6 +44,7 @@ const theme = createTheme({
       default: "#F5F5F5",
       paper: "#D9D9D9",
       green: "#DCE9D5",
+      darkGreen: "14220B",
     },
   },
   typography: {
