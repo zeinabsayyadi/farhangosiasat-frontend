@@ -1,5 +1,3 @@
-
-
 export default function Home() {
   return (
     <main>
@@ -9,7 +7,7 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        hi from react{" "}
+        hi from react home stuff will be here
       </h1>
     </main>
   );
