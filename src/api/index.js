@@ -1,12 +1,10 @@
 import axios from "axios";
 
+export const BASE_URL = `http://192.168.1.193:8000`; //api url it must have a api perfix !
+const api_url = (uri = "") => `${BASE_URL}${uri}`; // base_url must be config.api_url
 const opt = (head = { token: "" }) => ({
-  headers: { "x-access-token": head.token },
+  headers: { "x-access-token": head?.token, "content-type": head?.contentType },
 });
-// const opt_u = (head = { token: '' }) => ({
-//   headers: { 'x-access-token': head.token, 'Content-Type': 'multipart/form-data' }
-// })
-const api_url = (uri = "") => `${config.api_url}${uri}`;
 
 //----------------------------------------home
 export const getHeadrNews = (data, head = {}) => {
@@ -43,3 +41,10 @@ export const getHeadrNews = (data, head = {}) => {
     ]
   );
 };
+
+//guest apis
+
+export const getOneArticle = (data) => axios.get(api_url(data?.address));
+
+export const getAllArticles = (data, head) =>
+  axios.get(api_url(data?.address), opt(head));
