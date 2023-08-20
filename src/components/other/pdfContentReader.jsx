@@ -1,14 +1,23 @@
 import { Document, Page } from "react-pdf";
 import pdfjs from "pdfjs-dist";
-import { BASE_URL } from "@/api";
-import { useState } from "react";
+import { BASE_URL, ReadPDFFile } from "@/api";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const PdfContentReader = ({ contentLink }) => {
   console.log(contentLink?.replace(/\\/g, "/"));
-  const pdfUrl = `${BASE_URL}/${contentLink?.replace(/\\/g, "/")}`;
+  const pdfUrl = `${BASE_URL}/static/article/contents/articleContent1688973583056.pdf`;
   const [numPages, setNumPages] = useState(null);
   const [pdfText, setPdfText] = useState("");
-
+  useEffect(() => {
+    ReadPDFFile(
+      { address: pdfUrl },
+      { contentType: "text/pdf"
+      , responseType: "arraybuffer" }
+    )
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }, []);
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
     // Extract text from each page

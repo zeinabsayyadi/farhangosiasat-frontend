@@ -8,6 +8,7 @@ import rtlPlugin from "stylis-plugin-rtl";
 import { prefixer } from "stylis";
 import createCache from "@emotion/cache";
 
+
 export default function App({ Component, pageProps }) {
   const cacheRtl = createCache({
     key: "muirtl",

@@ -5,11 +5,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import PdfContentReader from "@/components/other/pdfContentReader";
+import { useRouter } from "next/router";
 
 const NewArticleCard = ({ article }) => {
+  console.log(article);
+  const router = useRouter();
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      <CardActionArea onClick={() => router.push(`/articles/${article?._id}`)}>
         <CardMedia
           component="img"
           height="100%"
@@ -22,13 +25,17 @@ const NewArticleCard = ({ article }) => {
             variant="h5"
             component="div"
           >
-            {article.authorName}
+            {article.title}
           </Typography>
+
           <Typography
             variant="body2"
             color="text.secondary"
           >
-            <PdfContentReader contentLink={article.contentlink} />
+            {article.subtitle}
+          </Typography>
+          <Typography>
+            نویسنده : {`${article.authorName} ${article.authorSurname}`}
           </Typography>
         </CardContent>
       </CardActionArea>

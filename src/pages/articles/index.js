@@ -20,8 +20,8 @@ const Articles = () => {
       }
     )
       .then((res) => {
-        console.log("res: ", res.data.articles);
-        setPaginatedArticles(res.data.articles);
+        console.log("res: ", res?.data?.articles);
+        setPaginatedArticles(res?.data?.articles);
       })
       .catch((err) => {
         console.log("err: ", err);
@@ -29,18 +29,6 @@ const Articles = () => {
   }, [page, limit]);
   return (
     <>
-      {/* <Image
-        //loader={contentfulImageLoader}
-        alt={"title"}
-        src={
-          "http://192.168.1.193:8000/static/article/image/articleImageTop1689444910260.png"
-        }
-        width={200}
-        height={200}
-        priority
-        className="backgroundImages"
-      /> */}
-
       <Grid
         container
         direction="column"
@@ -56,7 +44,7 @@ const Articles = () => {
           {paginatedArticles.map((article) => (
             <NewArticleCard
               article={article}
-              key={article.id}
+              key={article?.id}
             />
           ))}
         </Grid>
