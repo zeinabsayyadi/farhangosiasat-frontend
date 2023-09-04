@@ -1,6 +1,5 @@
 import { getAllArticles } from "@/api";
-import ArticleCard from "@/components/materials/cards/articleCard";
-import NewArticleCard from "@/components/materials/cards/newArticleCard";
+import ArticleCard from "@/components/materials/cards/article-card";
 import { Grid } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
@@ -11,17 +10,12 @@ const Articles = () => {
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(12);
   useEffect(() => {
-    getAllArticles(
-      {
-        address: "/guest/artilces",
-      },
-      {
-        contentType: "multipart/form-data",
-      }
-    )
+    getAllArticles({
+      address: "/guest/artilces",
+    })
       .then((res) => {
-        console.log("res: ", res?.data?.articles);
-        setPaginatedArticles(res?.data?.articles);
+        console.log("res: ", res);
+        //setPaginatedArticles(res?.data?.articles);
       })
       .catch((err) => {
         console.log("err: ", err);
@@ -42,7 +36,7 @@ const Articles = () => {
           alignItems="center"
         >
           {paginatedArticles.map((article) => (
-            <NewArticleCard
+            <ArticleCard
               article={article}
               key={article?.id}
             />

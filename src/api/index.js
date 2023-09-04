@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = `http://192.168.1.193:8000`; //api url it must have a api perfix !
+export const BASE_URL = `http://192.168.1.194:8000`; //api url it must have a api perfix !
 const api_url = (uri = "") => `${BASE_URL}${uri}`; // base_url must be config.api_url
 const opt = (head = { token: "" }) => ({
   responseType: head?.responseType,
@@ -52,8 +52,7 @@ export const getHeadrNews = (data, head = {}) => {
 
 export const getOneArticle = (data) => axios.get(api_url(data?.address));
 
-export const getAllArticles = (data, head) =>
-  axios.get(api_url(data?.address), opt(head));
+export const getAllArticles = (data) => axios.get(api_url(data?.address));
 
 export const ReadPDFFile = () =>
   axios.get(

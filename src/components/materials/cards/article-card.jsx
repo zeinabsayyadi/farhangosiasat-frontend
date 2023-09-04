@@ -4,10 +4,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import PdfContentReader from "@/components/other/pdfContentReader";
+//import PdfContentReader from "@/components/other/pdfContentReader";
 import { useRouter } from "next/router";
 
-const NewArticleCard = ({ article }) => {
+const ArticleCard = ({ article }) => {
   console.log(article);
   const router = useRouter();
   return (
@@ -42,4 +42,4 @@ const NewArticleCard = ({ article }) => {
     </Card>
   );
 };
-export default NewArticleCard;
+export default ArticleCard;
