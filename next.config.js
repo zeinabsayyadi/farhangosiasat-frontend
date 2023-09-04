@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["https://unsplash.com", "192.168.1.193"],
+    domains: [
+      "https://unsplash.com",
+      "https://images.unsplash.com",
+      "192.168.1.193",
+    ],
   },
   // i18n: {
   //   localeDetection: true, // 👈

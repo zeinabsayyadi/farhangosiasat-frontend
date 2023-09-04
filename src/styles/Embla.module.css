@@ -1,18 +1,64 @@
 .embla {
+  --slide-spacing: 0.5rem;
+  --slide-size: 100%;
+  --slide-height: 80vh;
+  direction: rtl;
+}
+.embla__viewport {
   overflow: hidden;
 }
 .embla__container {
+  backface-visibility: hidden;
   display: flex;
-  flex-direction: row;
-  max-height: 100vh;
+  touch-action: pan-y;
 }
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
+  padding-left: 1px;
+  position: relative;
+}
+.embla__slide__img {
+  display: block;
   height: 100vh;
-  text-align: center;
+  width: 100%;
+  object-fit: cover;
+}
+.embla__dot {
+  -webkit-appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 4rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+.embla__dots {
+  z-index: 100;
+  bottom: 1.6rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.first {
-  background-color: blueviolet;
+.embla__dot:after {
+  background: darkolivegreen;
+  border-radius: 0.2rem;
+  width: 100%;
+  height: 0.3rem;
+  content: "";
+}
+.embla__dot--selected:after {
+  background: linear-gradient(45deg, darkolivegreen, white);
 }

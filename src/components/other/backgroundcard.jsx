@@ -4,7 +4,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { ButtonBase, useTheme } from "@mui/material";
-
+import style from "@/styles/Embla.module.css";
 const BackgroundCard = ({ backgroundSlide }) => {
   const theme = useTheme();
   const contentfulImageLoader = ({ src, width }) => {
@@ -17,7 +17,7 @@ const BackgroundCard = ({ backgroundSlide }) => {
   return (
     <Card
       key={backgroundSlide?.id}
-      sx={{ width: "100vw", height: "100vh" }}
+      className={style[`embla__slide__img`]}
     >
       <CardMedia sx={{ width: "100vw", height: "100vh" }}>
         <div
@@ -40,7 +40,6 @@ const BackgroundCard = ({ backgroundSlide }) => {
             sizes="(max-width: 768px) 100vw"
             fill
             priority
-            className="backgroundImages"
           />
           <div
             style={{
