@@ -57,6 +57,18 @@ const EmblaCarousel = (props) => {
                       alignItems: "center",
                     }}
                   >
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        backgroundColor: "rgb(0,0,0,0.5)",
+                        pointerEvents: "none",
+                        zIndex: 1,
+                      }}
+                    />
                     <Image
                       loader={contentfulImageLoader}
                       alt={slide?.title}
@@ -71,6 +83,7 @@ const EmblaCarousel = (props) => {
                         position: "absolute",
                         alignItems: "center",
                         justifyContent: "center",
+                        zIndex: 4,
                       }}
                     >
                       <CardContent>

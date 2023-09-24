@@ -5,7 +5,7 @@ const nextConfig = {
     domains: [
       "https://unsplash.com",
       "https://images.unsplash.com",
-      "192.168.1.193",
+      "192.168.1.194",
     ],
   },
   // i18n: {

@@ -3,7 +3,6 @@ const Layout = ({ Children }) => {
   return (
     <>
       <Header />
-
       {Children}
     </>
   );
