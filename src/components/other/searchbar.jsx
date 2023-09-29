@@ -11,18 +11,8 @@ const SearchBar = () => {
     "&:hover": {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
-
-    //width: "inherit",
-    [theme.breakpoints.down("sm")]: {
-      marginLeft: theme.spacing(1),
-      width: "12.5rem",
-      height: "1.5rem",
-    },
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
-      width: "22rem",
-      height: "2rem",
-    },
+    width: "100%",
+    height: "2rem",
   }));
 
   const SearchIconWrapper = styled("div")(({ theme }) => ({

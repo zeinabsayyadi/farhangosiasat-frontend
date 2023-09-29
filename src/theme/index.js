@@ -2,15 +2,15 @@ import { createTheme, responsiveFontSizes } from "@mui/material";
 
 const theme = createTheme({
   direction: "rtl",
-  breakpoints: {
-    values: {
-      xs: 320,
-      sm: 750,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
-    },
-  },
+  // breakpoints: {
+  //   values: {
+  //     xs: 320,
+  //     sm: 750,
+  //     md: 900,
+  //     lg: 1200,
+  //     xl: 1536,
+  //   },
+  // },
   palette: {
     primary: {
       light: "#DCE9D5",

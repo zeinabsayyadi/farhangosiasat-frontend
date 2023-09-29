@@ -4,6 +4,13 @@ const Layout = ({ Children }) => {
     <>
       <Header />
       {Children}
+      <div
+        style={{
+          width: "100vw",
+        }}
+      >
+        footer
+      </div>
     </>
   );
 };

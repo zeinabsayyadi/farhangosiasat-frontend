@@ -9,6 +9,7 @@ import SearchBar from "./searchbar";
 import NavBarTabs from "./navbartabs";
 import { useEffect, useState } from "react";
 import DropDownMenu from "./dropDownMenu";
+import { Grid, Typography } from "@mui/material";
 
 const Appbar = () => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -37,35 +38,93 @@ const Appbar = () => {
             justifyContent: "space-between",
           }}
         >
-          <img
-            src="/svgs/logo.svg"
-            alt="Logo"
-          />
-          <Box sx={{}}>
-            <SearchBar />
-          </Box>
-
-          {windowWidth < 750 ? (
-            <IconButton
-              id="menu-open-button"
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-              //onTouchStart={(e) => openDropDown(e)}
-              // onTouchMove={(e) => console.log("onTouchMove")}
-              onTouchEnd={(e) => openDropDown(e)}
-              // onTouchCancel={(e) => console.log("onTouchCancel")}
+          {windowWidth > 600 ? (
+            <Grid
+              container
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
             >
-              <MenuIcon />
-            </IconButton>
+              <Grid
+                item
+                container
+                direction="row"
+                justifyContent="start"
+                alignItems="center"
+                gap={1}
+                sm={6}
+                md={3}
+              >
+                <img
+                  src="/svgs/logo.svg"
+                  alt="Logo"
+                />
+                <Typography variant="h6">
+                  انجمن فرهنگ و سیاست دانشگاه شیراز
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                sm={6}
+                md={3}
+              >
+                <SearchBar />
+              </Grid>
+              <Grid
+                item
+                container
+                justifyContent="end"
+                sm={12}
+                md={6}
+              >
+                <NavBarTabs />
+              </Grid>
+            </Grid>
           ) : (
-            <NavBarTabs />
+            <Grid
+              container
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Grid
+                item
+                container
+                direction="row"
+                justifyContent="start"
+                alignItems="center"
+                gap={1}
+                xs={6}
+              >
+                <img
+                  src="/svgs/logo.svg"
+                  alt="Logo"
+                />
+              </Grid>
+              <Grid>
+                <IconButton
+                  id="menu-open-button"
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="open drawer"
+                  sx={{ mr: 2 }}
+                  onTouchEnd={(e) => openDropDown(e)}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+              >
+                <SearchBar />
+              </Grid>
+            </Grid>
           )}
         </Toolbar>
       </AppBar>
-      {windowWidth > 750 ? null : (
+      {windowWidth > 600 ? null : (
         <DropDownMenu
           dropdownFlag={dropdownFlag}
           setDropdownFlag={setDropdownFlag}
@@ -76,3 +135,17 @@ const Appbar = () => {
 };
 
 export default Appbar;
+
+{
+  /* <IconButton
+  id="menu-open-button"
+  size="large"
+  edge="start"
+  color="inherit"
+  aria-label="open drawer"
+  sx={{ mr: 2 }}
+  onTouchEnd={(e) => openDropDown(e)}
+>
+  <MenuIcon />
+</IconButton>; */
+}

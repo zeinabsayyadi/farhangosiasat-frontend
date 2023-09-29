@@ -43,6 +43,7 @@ const NavBarTabs = () => {
         }
         label={
           <Typography
+            variant="button"
             color={
               value === 0
                 ? theme.palette.text.primary.light
@@ -63,6 +64,7 @@ const NavBarTabs = () => {
         }
         label={
           <Typography
+            variant="button"
             color={
               value === 1
                 ? theme.palette.text.primary.light
@@ -83,6 +85,7 @@ const NavBarTabs = () => {
         }
         label={
           <Typography
+            variant="button"
             color={
               value === 2
                 ? theme.palette.text.primary.light
@@ -103,6 +106,7 @@ const NavBarTabs = () => {
         }
         label={
           <Typography
+            variant="button"
             color={
               value === 3
                 ? theme.palette.text.primary.light
@@ -123,6 +127,7 @@ const NavBarTabs = () => {
         }
         label={
           <Typography
+            variant="button"
             color={
               value === 4
                 ? theme.palette.text.primary.light
@@ -143,6 +148,7 @@ const NavBarTabs = () => {
         }
         label={
           <Typography
+            variant="button"
             color={
               value === 5
                 ? theme.palette.text.primary.light
